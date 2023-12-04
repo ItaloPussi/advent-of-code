@@ -12,7 +12,7 @@ At the time of writing, I plan to tackle each year with a different programming 
 Ocasionally, I'll sparkle things up: In some challenges, I could use a different methodology (TDD, for example). In others, study a different lib or technology (like regex). It will all depend of my confidence and knowledge for the given challenge.
 
 ## Contributing
-This is a event for improve my programming capacities, so pull requests are not allowed. But if you've found a bug or a problem (like a important test missing in a challenge I stated I'd work with TDD) in one of my implementations, feel free to open a issue.
+This is a event for improve my programming capabilities, so pull requests are not allowed. But if you've found a bug or a problem (like a important test missing in a challenge I stated I'd work with TDD) in one of my implementations, feel free to open a issue.
 
 ## Licence
 [MIT](https://choosealicense.com/licenses/mit/)
