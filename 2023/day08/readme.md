@@ -1,4 +1,4 @@
-# Camel Cards (Day 06) - Advent of Code 2023 
+# Haunted Wasteland (Day 08) - Advent of Code 2023 
 
 ## The First Star
 A Given document contains a list of left/right instructions, and a network of labeled nodes.

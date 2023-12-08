@@ -107,7 +107,7 @@ def get_ghost_total_steps(map_list: list[str]) -> int:
 if __name__ == "__main__":
     with open("./input.txt", encoding="utf-8") as input_file:
         input_items = [k.strip() for k in input_file.readlines()]
-        print("===== Haunted Wasteland  (Day 08) - Advent of Code 2023  =====")
+        print("===== Haunted Wasteland (Day 08) - Advent of Code 2023  =====")
         print(
             f"The first star result is {get_person_total_steps(input_items)}")
         print(
