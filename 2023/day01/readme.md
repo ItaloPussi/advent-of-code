@@ -33,8 +33,10 @@ The calibration values are 29, 83, 13, 24, 42, 14, and 76. Adding these together
 ## Running the code
 To run the code, just use the following command in this directory in a environment with Python3 installed and it will give you the result:
 ```
+    pip install -r requirements.txt
     python3 main.py
 ```
+Remember to configure your (AoC Session)[https://pypi.org/project/advent-of-code-data/#description]
 
 For this challenge, I've used the TDD methodology. Tests can be run with:
 ```

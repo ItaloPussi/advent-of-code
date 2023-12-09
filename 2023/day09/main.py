@@ -94,10 +94,20 @@ def extrapolate_next_number_sum(sequences: list[str], side: Literal["left", "rig
 
 
 if __name__ == "__main__":
-    with open("./input.txt", encoding="utf-8") as input_file:
-        input_items = [k.strip() for k in input_file.readlines()]
-        print("===== Mirage Maintenance (Day 09) - Advent of Code 2023  =====")
-        print(
-            f"The first star result is {extrapolate_next_number_sum(input_items)}")
-        print(
-            f"The second star result is {extrapolate_next_number_sum(input_items, 'left')}")
+    print("===== Mirage Maintenance (Day 09) - Advent of Code 2023  =====")
+
+    try:
+        from aocd import get_data
+        input_items = get_data(day=9, year=2023).split("\n")
+    except Exception as e:
+        try:
+            with open("./input.txt", encoding="utf-8") as input_file:
+                input_items = input_file.readlines()
+        except FileNotFoundError:
+            print("Could not fetch input data from AoC and input.txt is not present.")
+            exit()
+
+    print(
+        f"The first star result is {extrapolate_next_number_sum(input_items)}")
+    print(
+        f"The second star result is {extrapolate_next_number_sum(input_items, 'left')}")

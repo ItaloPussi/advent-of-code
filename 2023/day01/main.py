@@ -1,4 +1,5 @@
 "Advent of Cyber 2023 - Day 01 - Exercises 01 and 02"
+
 from typing import Union, List
 
 # Maps the digit in the text form to its numerical representation
@@ -70,10 +71,20 @@ def get_calibration_items_sum(items: List[str], allow_written_digits=False) -> i
 
 
 if __name__ == "__main__":
-    with open("./input.txt", encoding="utf-8") as input_file:
-        input_items = input_file.readlines()
-        print("===== Trebuchet (Day 01) - Advent of Code 2023  =====")
-        print(
-            f"The first star result is {get_calibration_items_sum(input_items)}")
-        print(
-            f"The second star result is {get_calibration_items_sum(input_items, True)}")
+    print("===== Trebuchet (Day 01) - Advent of Code 2023  =====")
+
+    try:
+        from aocd import get_data
+        input_items = get_data(day=1, year=2023).split("\n")
+    except Exception as e:
+        try:
+            with open("./input.txt", encoding="utf-8") as input_file:
+                input_items = input_file.readlines()
+        except FileNotFoundError:
+            print("Could not fetch input data from AoC and input.txt is not present.")
+            exit()
+
+    print(
+        f"The first star result is {get_calibration_items_sum(input_items)}")
+    print(
+        f"The second star result is {get_calibration_items_sum(input_items, True)}")

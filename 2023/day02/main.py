@@ -100,10 +100,20 @@ def get_game_balls_min_amount_sum(games: str) -> int:
 
 
 if __name__ == "__main__":
-    with open("./input.txt", encoding="utf-8") as input_file:
-        input_items = input_file.readlines()
-        print("===== Cube Conundrum (Day 02) - Advent of Code 2023  =====")
-        print(
-            f"The first star result is {get_possible_games_sum(input_items)}")
-        print(
-            f"The second star result is {get_game_balls_min_amount_sum(input_items)}")
+    print("===== Cube Conundrum (Day 02) - Advent of Code 2023  =====")
+
+    try:
+        from aocd import get_data
+        input_items = get_data(day=2, year=2023).split("\n")
+    except Exception as e:
+        try:
+            with open("./input.txt", encoding="utf-8") as input_file:
+                input_items = input_file.readlines()
+        except FileNotFoundError:
+            print("Could not fetch input data from AoC and input.txt is not present.")
+            exit()
+
+    print(
+        f"The first star result is {get_possible_games_sum(input_items)}")
+    print(
+        f"The second star result is {get_game_balls_min_amount_sum(input_items)}")

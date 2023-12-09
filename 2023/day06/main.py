@@ -63,10 +63,20 @@ def get_total_ways_to_beat_record_count(race_items: List[str], single_race=False
 
 
 if __name__ == "__main__":
-    with open("./input.txt", encoding="utf-8") as input_file:
-        input_items = [k.strip() for k in input_file.readlines()]
-        print("===== Wait For It (Day 06) - Advent of Code 2023  =====")
-        print(
-            f"The first star result is {get_total_ways_to_beat_record_count(input_items)}")
-        print(
-            f"The second star result is {get_total_ways_to_beat_record_count(input_items, single_race=True)}")
+    print("===== Wait For It (Day 06) - Advent of Code 2023  =====")
+
+    try:
+        from aocd import get_data
+        input_items = get_data(day=6, year=2023).split("\n")
+    except Exception as e:
+        try:
+            with open("./input.txt", encoding="utf-8") as input_file:
+                input_items = input_file.readlines()
+        except FileNotFoundError:
+            print("Could not fetch input data from AoC and input.txt is not present.")
+            exit()
+
+    print(
+        f"The first star result is {get_total_ways_to_beat_record_count(input_items)}")
+    print(
+        f"The second star result is {get_total_ways_to_beat_record_count(input_items, single_race=True)}")

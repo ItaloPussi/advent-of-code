@@ -116,10 +116,20 @@ def range_get_seed_min_location(almanac: list[str]) -> int:
 
 
 if __name__ == "__main__":
-    with open("./input.txt", encoding="utf-8") as input_file:
-        input_items = [k.strip() for k in input_file.readlines()]
-        print("===== If You Give A Seed A Fertilizer (Day 05) - Advent of Code 2023  =====")
-        print(
-            f"The first star result is {get_minimum_seed_location(input_items)}")
-        print(
-            f"The second star result is {range_get_seed_min_location(input_items)}")
+    print("===== If You Give A Seed A Fertilizer (Day 05) - Advent of Code 2023  =====")
+
+    try:
+        from aocd import get_data
+        input_items = get_data(day=5, year=2023).split("\n")
+    except Exception as e:
+        try:
+            with open("./input.txt", encoding="utf-8") as input_file:
+                input_items = input_file.readlines()
+        except FileNotFoundError:
+            print("Could not fetch input data from AoC and input.txt is not present.")
+            exit()
+
+    print(
+        f"The first star result is {get_minimum_seed_location(input_items)}")
+    print(
+        f"The second star result is {range_get_seed_min_location(input_items)}")

@@ -175,10 +175,20 @@ def get_gear_numbers_sum(schematic: str) -> int:
 
 
 if __name__ == "__main__":
-    with open("./input.txt", encoding="utf-8") as input_file:
-        input_items = [k.strip() for k in input_file.readlines()]
-        print("===== Gear Ratios (Day 03) - Advent of Code 2023  =====")
-        print(
-            f"The first star result is {get_adjacency_numbers_sum(input_items)}")
-        print(
-            f"The second star result is {get_gear_numbers_sum(input_items)}")
+    print("===== Gear Ratios (Day 03) - Advent of Code 2023  =====")
+
+    try:
+        from aocd import get_data
+        input_items = get_data(day=3, year=2023).split("\n")
+    except Exception as e:
+        try:
+            with open("./input.txt", encoding="utf-8") as input_file:
+                input_items = input_file.readlines()
+        except FileNotFoundError:
+            print("Could not fetch input data from AoC and input.txt is not present.")
+            exit()
+
+    print(
+        f"The first star result is {get_adjacency_numbers_sum(input_items)}")
+    print(
+        f"The second star result is {get_gear_numbers_sum(input_items)}")
